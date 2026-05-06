@@ -11,12 +11,13 @@ const {
 
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
-  image = await Astro.slots.render('image'),
+
+  image,
 
   id,
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
-
+const base = import.meta.env.BASE_URL;
 const isHydroSaf = Astro.url.pathname.includes('hydro-saf');
 ---
 
@@ -36,7 +37,7 @@ const isHydroSaf = Astro.url.pathname.includes('hydro-saf');
         isHydroSaf && (
           <div class="flex justify-center mb-6">
             <img
-              src="/logo-hydro-saf.png"
+              src={`${base}/logo-hydro-saf.png`}
               alt="HYDRO-SAF"
               class="h-14 md:h-16 w-auto object-contain opacity-90 animate-fade"
             />

@@ -13,6 +13,7 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
+
 import {
   readingTimeRemarkPlugin,
   responsiveTablesRehypePlugin,
@@ -20,7 +21,7 @@ import {
 } from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
+console.log("CONFIG BASE:", '/saf-eagle');
 const hasExternalScripts = false;
 
 const whenExternalScripts = (
@@ -40,6 +41,14 @@ export default defineConfig({
 
   trailingSlash: 'always',
 
+    build: {
+    assets: '_astro',
+  },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -93,10 +102,6 @@ export default defineConfig({
       config: './src/config.yaml',
     }),
   ],
-
-  image: {
-    domains: ['cdn.pixabay.com'],
-  },
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],

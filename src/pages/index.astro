@@ -16,6 +16,9 @@ const metadata = {
   title: 'SAF-EAGLE | UCLM ',
   ignoreTitleTemplate: true,
 };
+console.log("BASE URL:", Astro.site);
+console.log("BASE URL 2:", Astro.url);
+console.log("BASE URL 3:", import.meta.env.BASE_URL);
 ---
 
 <Layout metadata={metadata}>

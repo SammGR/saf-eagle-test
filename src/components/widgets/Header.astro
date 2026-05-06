@@ -5,6 +5,8 @@ import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
 
+const base = import.meta.env.BASE_URL;
+
 interface Link {
   text?: string;
   href?: string;
@@ -57,8 +59,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class="flex ml-14">
-      <a class="flex items-center" href="https://uclm-inaia.github.io/" target="_blank" rel="noopener noreferrer">
-        <img src="/uclm-inaia.png" alt="UCLM INAIA" class="h-10 w-auto object-contain" />
+      <a
+        class="flex items-center"
+        href="https://uclm-inaia.github.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={`${base}/uclm-inaia.png`}
+          alt="UCLM INAIA"
+          class="h-10 w-auto object-contain"
+        />
       </a>
 
       <div class="flex items-center md:hidden">
@@ -82,9 +93,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     type="button"
                     class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
                   >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
+                    {text}
+                    <Icon
+                      name="tabler:chevron-down"
+                      class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline"
+                    />
                   </button>
+
                   <ul class="dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
@@ -142,7 +157,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
         <span class="flex items-center">
           <a href="https://www.grupogpem.com/" target="_blank">
-            <img src="/gespen.png" alt="GESPEN" class="h-11 w-auto object-contain" />
+            <img
+              src={`${base}/gespen.png`}
+              alt="GESPEN"
+              class="h-11 w-auto object-contain"
+            />
           </a>
         </span>
       </div>
