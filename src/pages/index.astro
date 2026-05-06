@@ -19,217 +19,204 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- HERO -->
+  <Hero image={{ src: heroImg, alt: 'SAF-EAGLE Platform' }}>
+    <Fragment slot="title">
+      <span class="font-bold text-gray-900 dark:text-white">
+        <span class="text-[#A50034]">SAF-EAGLE</span>: Technological and environmental viability of Sustainable Aviation
+        Fuels
+      </span>
+    </Fragment>
 
-<!-- HERO -->
-<Hero image={{ src: heroImg, alt: 'SAF-EAGLE Platform' }}>
-  <Fragment slot="title">
-    <span class="font-bold text-gray-900 dark:text-white">
-      <span class="text-[#A50034]">SAF-EAGLE</span>: 
-      Technological and environmental viability of Sustainable Aviation Fuels
-    </span>
-  </Fragment>
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline text-gray-600 dark:text-gray-300">
+        Coordinated research project focused on evaluating the effects of Sustainable Aviation Fuels (SAF) on engine
+        performance, material compatibility and ground-level emissions.
+      </span>
+    </Fragment>
+  </Hero>
 
-  <Fragment slot="subtitle">
-    <span class="hidden sm:inline text-gray-600 dark:text-gray-300">
-      Coordinated research project focused on evaluating the effects of Sustainable Aviation Fuels (SAF) 
-      on engine performance, material compatibility and ground-level emissions.
-    </span>
-  </Fragment>
-</Hero>
+  <!-- OBJECTIVE -->
+  <Note
+    title="Main Objective:"
+    description="Assessment of the technical viability of Sustainable Aviation Fuels in micro-jet engines, turbojet engines and aircraft under different operating conditions."
+  />
 
-<!-- OBJECTIVE -->
-<Note 
-  title="Main Objective:" 
-  description="Assessment of the technical viability of Sustainable Aviation Fuels in micro-jet engines, turbojet engines and aircraft under different operating conditions." 
-/>
+  <!-- SUBPROJECTS -->
+  <Features
+    id="subprojects"
+    tagline="SAF-EAGLE Project"
+    title="Coordinated Structure"
+    subtitle="Three interconnected subprojects covering fuels, engines and emissions."
+    items={[
+      {
+        title: 'HYDRO-SAF',
+        description:
+          'Experimental analysis of performance, emissions and compatibility of elastomeric materials using SAF blends in jet engines.',
+        icon: 'tabler:engine',
+      },
+      {
+        title: 'SAF-FALCON',
+        description:
+          'Production, upgrading and characterization of new sustainable aviation fuels from alternative sources such as plastic waste.',
+        icon: 'tabler:flame',
+      },
+      {
+        title: 'METHOD-EAGLE',
+        description:
+          'Development of advanced methodologies for comprehensive characterization of gaseous and particulate emissions in aviation.',
+        icon: 'tabler:chart-bar',
+      },
+    ]}
+  />
 
-<!-- SUBPROJECTS -->
-<Features
-  id="subprojects"
-  tagline="SAF-EAGLE Project"
-  title="Coordinated Structure"
-  subtitle="Three interconnected subprojects covering fuels, engines and emissions."
-  items={[
-    {
-      title: 'HYDRO-SAF',
-      description:
-        'Experimental analysis of performance, emissions and compatibility of elastomeric materials using SAF blends in jet engines.',
-      icon: 'tabler:engine',
-    },
-    {
-      title: 'SAF-FALCON',
-      description:
-        'Production, upgrading and characterization of new sustainable aviation fuels from alternative sources such as plastic waste.',
-      icon: 'tabler:flame',
-    },
-    {
-      title: 'METHOD-EAGLE',
-      description:
-        'Development of advanced methodologies for comprehensive characterization of gaseous and particulate emissions in aviation.',
-      icon: 'tabler:chart-bar',
-    },
-  ]}
-/>
+  <!-- JUSTIFICATION -->
+  <Features
+    tagline="SAF-EAGLE Project"
+    title="Justification and Coordination"
+    subtitle="Integrated research strategy based on coordinated experimental work."
+    image={{ src: safeagle3, alt: 'Scientific Novelty SAF-EAGLE' }}
+    items={[
+      {
+        title: 'Need for coordination',
+        description:
+          'The complexity of SAF evaluation requires collaboration between specialized research groups combining complementary expertise.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Common experimental framework',
+        description:
+          'All subprojects share fuels, operating conditions and test campaigns to ensure comparability and consistency of results.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Multi-scale approach',
+        description:
+          'Research progresses from laboratory-scale micro-jet engines to real turbojet engines and aircraft testing.',
+        icon: 'tabler:arrows-maximize',
+      },
+    ]}
+  />
 
-<!-- JUSTIFICATION -->
-<Features
-  tagline="SAF-EAGLE Project"
-  title="Justification and Coordination"
-  subtitle="Integrated research strategy based on coordinated experimental work."
-  image={{ src: safeagle3, alt: 'Scientific Novelty SAF-EAGLE' }}
-  items={[
-    {
-      title: 'Need for coordination',
-      description:
-        'The complexity of SAF evaluation requires collaboration between specialized research groups combining complementary expertise.',
-      icon: 'tabler:users',
-    },
-    {
-      title: 'Common experimental framework',
-      description:
-        'All subprojects share fuels, operating conditions and test campaigns to ensure comparability and consistency of results.',
-      icon: 'tabler:settings',
-    },
-    {
-      title: 'Multi-scale approach',
-      description:
-        'Research progresses from laboratory-scale micro-jet engines to real turbojet engines and aircraft testing.',
-      icon: 'tabler:arrows-maximize',
-    },
-  ]}
-/>
+  <!-- NOVELTY -->
+  <Content
+    tagline="SAF-EAGLE Project"
+    title="Scientific Novelty"
+    image={{ src: safeagle2, alt: 'Scientific Novelty SAF-EAGLE' }}
+    items={[
+      {
+        title: 'Dual-scale experimental strategy',
+        description: 'Combination of micro-jet engine testing and full-scale validation in real aircraft engines.',
+      },
+      {
+        title: 'Integrated analysis',
+        description: 'Simultaneous study of fuel properties, engine performance and pollutant emissions.',
+      },
+      {
+        title: 'Advanced methodologies',
+        description: 'Development of new procedures beyond current standards for emission characterization.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        A unique experimental framework in Spain
+      </h3>
+      SAF-EAGLE combines laboratory experiments, modelling and real-scale validation to assess the safe implementation of
+      Sustainable Aviation Fuels.
+    </Fragment>
+  </Content>
 
-<!-- NOVELTY -->
-<Content
-  tagline="SAF-EAGLE Project"
-  title="Scientific Novelty"
-  image={{ src: safeagle2, alt: 'Scientific Novelty SAF-EAGLE' }}
-  items={[
-    {
-      title: 'Dual-scale experimental strategy',
-      description:
-        'Combination of micro-jet engine testing and full-scale validation in real aircraft engines.',
-    },
-    {
-      title: 'Integrated analysis',
-      description:
-        'Simultaneous study of fuel properties, engine performance and pollutant emissions.',
-    },
-    {
-      title: 'Advanced methodologies',
-      description:
-        'Development of new procedures beyond current standards for emission characterization.',
-    },
-  ]}
->
-  <Fragment slot="content">
-    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-      A unique experimental framework in Spain
-    </h3>
-    SAF-EAGLE combines laboratory experiments, modelling and real-scale validation 
-    to assess the safe implementation of Sustainable Aviation Fuels.
-  </Fragment>
-</Content>
+  <!-- METHODOLOGY -->
+  <Content
+    isReversed
+    tagline="SAF-EAGLE Project"
+    title="Objectives and Methodology"
+    items={[
+      {
+        title: 'Fuel characterization',
+        description:
+          'Analysis of physical-chemical properties and development of new SAF including pyrolysis-based fuels.',
+      },
+      {
+        title: 'Experimental validation',
+        description: 'Testing in micro-jet engines followed by validation in real engines and aircraft.',
+      },
+      {
+        title: 'Emission analysis',
+        description: 'Comprehensive measurement of gaseous and particulate emissions using advanced instrumentation.',
+      },
+    ]}
+    image={{
+      src: hangarImg,
+      alt: 'SAF-EAGLE experimental infrastructure',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        From laboratory to real aviation systems
+      </h3>
+      The methodology integrates experimental campaigns, modelling and coordinated testing to ensure reliable evaluation
+      of SAF under realistic conditions.
+    </Fragment>
 
-<!-- METHODOLOGY -->
-<Content
-  isReversed
-  tagline="SAF-EAGLE Project"
-  title="Objectives and Methodology"
-  items={[
-    {
-      title: 'Fuel characterization',
-      description:
-        'Analysis of physical-chemical properties and development of new SAF including pyrolysis-based fuels.',
-    },
-    {
-      title: 'Experimental validation',
-      description:
-        'Testing in micro-jet engines followed by validation in real engines and aircraft.',
-    },
-    {
-      title: 'Emission analysis',
-      description:
-        'Comprehensive measurement of gaseous and particulate emissions using advanced instrumentation.',
-    },
-  ]}
-  image={{
-    src: hangarImg,
-    alt: 'SAF-EAGLE experimental infrastructure',
-  }}
->
-  <Fragment slot="content">
-    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-      From laboratory to real aviation systems
-    </h3>
-    The methodology integrates experimental campaigns, modelling and coordinated testing 
-    to ensure reliable evaluation of SAF under realistic conditions.
-  </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  </Fragment>
-</Content>
+  <!-- IMPACT -->
+  <Features
+    tagline="SAF-EAGLE Project"
+    title="Expected Impact"
+    subtitle="Scientific, environmental and technological contributions."
+    items={[
+      {
+        title: 'Emission knowledge',
+        description: 'Generation of data on pollutant emissions and environmental impact of SAF.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Material compatibility',
+        description: 'Understanding SAF interaction with elastomeric materials in aviation systems.',
+        icon: 'tabler:box',
+      },
+      {
+        title: 'New methodologies',
+        description: 'Development of advanced experimental procedures for emission characterization.',
+        icon: 'tabler:flask',
+      },
+    ]}
+  />
 
-<!-- IMPACT -->
-<Features
-  tagline="SAF-EAGLE Project"
-  title="Expected Impact"
-  subtitle="Scientific, environmental and technological contributions."
-  items={[
-    {
-      title: 'Emission knowledge',
-      description:
-        'Generation of data on pollutant emissions and environmental impact of SAF.',
-      icon: 'tabler:leaf',
-    },
-    {
-      title: 'Material compatibility',
-      description:
-        'Understanding SAF interaction with elastomeric materials in aviation systems.',
-      icon: 'tabler:box',
-    },
-    {
-      title: 'New methodologies',
-      description:
-        'Development of advanced experimental procedures for emission characterization.',
-      icon: 'tabler:flask',
-    },
-  ]}
-/>
+  <!-- FRAMEWORK -->
+  <Content
+    tagline="SAF-EAGLE Project"
+    title="Integrated Research Framework"
+    image={{ src: safeagle3, alt: 'Scientific Novelty SAF-EAGLE' }}
+    items={[
+      {
+        title: 'Cross-project collaboration',
+        description: 'Continuous exchange of results between subprojects to optimize research outcomes.',
+      },
+      {
+        title: 'Common testing campaigns',
+        description: 'Joint experimental campaigns ensuring consistency across methodologies.',
+      },
+      {
+        title: 'Scalability',
+        description: 'Application of results from laboratory to real aviation environments.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Coordinated science for real impact
+      </h3>
+      SAF-EAGLE ensures that all research contributes to a unified understanding of Sustainable Aviation Fuels in real-world
+      applications.
+    </Fragment>
+  </Content>
 
-<!-- FRAMEWORK -->
-<Content
-  tagline="SAF-EAGLE Project"
-  title="Integrated Research Framework"
-  image={{ src: safeagle3, alt: 'Scientific Novelty SAF-EAGLE' }}
-  items={[
-    {
-      title: 'Cross-project collaboration',
-      description:
-        'Continuous exchange of results between subprojects to optimize research outcomes.',
-    },
-    {
-      title: 'Common testing campaigns',
-      description:
-        'Joint experimental campaigns ensuring consistency across methodologies.',
-    },
-    {
-      title: 'Scalability',
-      description:
-        'Application of results from laboratory to real aviation environments.',
-    },
-  ]}
->
-  <Fragment slot="content">
-    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-      Coordinated science for real impact
-    </h3>
-    SAF-EAGLE ensures that all research contributes to a unified understanding 
-    of Sustainable Aviation Fuels in real-world applications.
-  </Fragment>
-</Content>
-
-<Stats stats={[]} />
-
+  <Stats stats={[]} />
 </Layout>

@@ -19,8 +19,7 @@ const facilities = [
   {
     image: f1,
     title: 'Engine testing platform for steady-state testing',
-    description:
-      'Controlled setup for analysing engine performance, fuel consumption and emissions.',
+    description: 'Controlled setup for analysing engine performance, fuel consumption and emissions.',
   },
   {
     image: f2,
@@ -31,7 +30,8 @@ const facilities = [
   {
     image: f3,
     title: 'Engine instrumentation and EVI system',
-    description:'High-resolution sensors and EVI system for pressure, temperature and flow measurements across different engine sections.',
+    description:
+      'High-resolution sensors and EVI system for pressure, temperature and flow measurements across different engine sections.',
   },
   {
     image: f4,
@@ -53,60 +53,48 @@ const facilities = [
   },
   {
     image: f6,
-     title: 'Micro-jet engine test bench',
+    title: 'Micro-jet engine test bench',
     description:
       'Experimental setup used to evaluate engine performance, fuel consumption and emissions under controlled laboratory conditions.',
   },
   {
-  image: f7,
-  title: 'Altitude simulation and environmental control system',
-  description:
-    'HORIBA-based test system capable of simulating altitude conditions up to 3000 m, with precise control of temperature and humidity for experimental evaluation of engine behaviour under varying atmospheric conditions.',
+    image: f7,
+    title: 'Altitude simulation and environmental control system',
+    description:
+      'HORIBA-based test system capable of simulating altitude conditions up to 3000 m, with precise control of temperature and humidity for experimental evaluation of engine behaviour under varying atmospheric conditions.',
   },
 ];
 ---
 
 <Layout metadata={metadata}>
-
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold mb-4 dark:text-white">
-        Experimental Facilities
-      </h1>
+      <h1 class="text-4xl font-bold mb-4 dark:text-white">Experimental Facilities</h1>
       <p class="text-lg text-muted max-w-2xl mx-auto dark:text-slate-300">
-        SAF-EAGLE experimental activities are supported by advanced laboratory
-        infrastructure for fuel characterization, engine testing and emissions analysis.
+        SAF-EAGLE experimental activities are supported by advanced laboratory infrastructure for fuel characterization,
+        engine testing and emissions analysis.
       </p>
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        facilities.map((item) => (
+          <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden">
+            <Image
+              src={item.image}
+              alt={item.title}
+              class="w-full h-56 object-cover"
+              widths={[400, 768]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
 
-      {facilities.map((item) => (
-        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden">
-          
-          <Image
-            src={item.image}
-            alt={item.title}
-            class="w-full h-56 object-cover"
-            widths={[400, 768]}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-
-          <div class="p-5">
-            <h3 class="text-lg font-semibold mb-2 dark:text-white">
-              {item.title}
-            </h3>
-            <p class="text-sm text-muted dark:text-slate-400">
-              {item.description}
-            </p>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold mb-2 dark:text-white">{item.title}</h3>
+              <p class="text-sm text-muted dark:text-slate-400">{item.description}</p>
+            </div>
           </div>
-
-        </div>
-      ))}
-
+        ))
+      }
     </div>
-
   </section>
-
 </Layout>

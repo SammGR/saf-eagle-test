@@ -52,17 +52,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     class:list={[
       'relative text-default py-3 pl-0 pr-3 md:pl-0 md:pr-6 w-full',
       { 'md:flex md:justify-between': position !== 'center' },
-      {  'md:flex md:items-center md:justify-between': true },
-      'w-full'
+      { 'md:flex md:items-center md:justify-between': true },
+      'w-full',
     ]}
   >
     <div class="flex ml-14">
       <a class="flex items-center" href="https://uclm-inaia.github.io/" target="_blank" rel="noopener noreferrer">
-        <img 
-          src="/uclm-inaia.png" 
-          alt="UCLM INAIA" 
-          class="h-10 w-auto object-contain"
-        />
+        <img src="/uclm-inaia.png" alt="UCLM INAIA" class="h-10 w-auto object-contain" />
       </a>
 
       <div class="flex items-center md:hidden">
@@ -110,9 +106,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-'px-4 py-3 flex items-center whitespace-nowrap border-b-2 border-transparent transition-all duration-1000 ease-out',
-'hover:border-[#A50034]',
-{ 'border-[#A50034]': href === currentPath },
+                    'px-4 py-3 flex items-center whitespace-nowrap border-b-2 border-transparent transition-all duration-1000 ease-out',
+                    'hover:border-[#A50034]',
+                    { 'border-[#A50034]': href === currentPath },
                   ]}
                   href={href}
                 >
@@ -139,22 +135,16 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                 aria-label="RSS Feed"
                 href={getAsset('/rss.xml')}
-              >
-              </a>
+              />
             )
           }
         </div>
 
         <span class="flex items-center">
           <a href="https://www.grupogpem.com/" target="_blank">
-            <img 
-              src="/gespen.png" 
-              alt="GESPEN" 
-              class="h-11 w-auto object-contain"
-            />
+            <img src="/gespen.png" alt="GESPEN" class="h-11 w-auto object-contain" />
           </a>
         </span>
-
       </div>
     </div>
   </div>

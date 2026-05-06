@@ -58,12 +58,8 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [
-   
-  ],
-  socialLinks: [
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com' },
-  ],
+  secondaryLinks: [],
+  socialLinks: [{ ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com' }],
   footNote: `
     SAF-EAGLE Project · University of Castilla-La Mancha (UCLM)
   `,
