@@ -13,23 +13,40 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
-const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+
+const whenExternalScripts = (
+  items: (() => AstroIntegration) | (() => AstroIntegration)[] = []
+) =>
+  hasExternalScripts
+    ? Array.isArray(items)
+      ? items.map((item) => item())
+      : [items()]
+    : [];
 
 export default defineConfig({
   output: 'static',
+
+  site: 'https://sammgr.github.io',
+  base: '/saf-eagle-test/',
 
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
+
     sitemap(),
+
     mdx(),
+
     icon({
       include: {
         tabler: ['*'],
@@ -49,17 +66,21 @@ export default defineConfig({
 
     ...whenExternalScripts(() =>
       partytown({
-        config: { forward: ['dataLayer.push'] },
+        config: {
+          forward: ['dataLayer.push'],
+        },
       })
     ),
 
     compress({
       CSS: true,
+
       HTML: {
         'html-minifier-terser': {
           removeAttributeQuotes: false,
         },
       },
+
       Image: false,
       JavaScript: true,
       SVG: false,
@@ -77,7 +98,10 @@ export default defineConfig({
 
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
+    rehypePlugins: [
+      responsiveTablesRehypePlugin,
+      lazyImagesRehypePlugin,
+    ],
   },
 
   vite: {
