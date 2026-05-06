@@ -27,7 +27,6 @@ export default defineConfig({
 
   site: 'https://sammgr.github.io',
   base: '/saf-eagle-test/',
- 
 
   integrations: [
     tailwind({
