@@ -25,7 +25,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
 
-  site: 'https://sammgr.github.io',
+  site: 'https://sammgr.github.io/saf-eagle-test',
   base: '/saf-eagle-test/',
 
   integrations: [
