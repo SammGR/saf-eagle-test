@@ -41,14 +41,8 @@ if (typeof _image === 'string') {
       class: props.class,
       loading: props.loading || 'lazy',
       decoding: props.decoding || 'async',
-      width:
-        typeof props.width === 'string'
-          ? undefined
-          : props.width,
-      height:
-        typeof props.height === 'string'
-          ? undefined
-          : props.height,
+      width: typeof props.width === 'string' ? undefined : props.width,
+      height: typeof props.height === 'string' ? undefined : props.height,
     },
   };
 } else if (_image?.src) {
@@ -59,24 +53,11 @@ if (typeof _image === 'string') {
       class: props.class,
       loading: props.loading || 'lazy',
       decoding: props.decoding || 'async',
-      width:
-        typeof props.width === 'string'
-          ? _image.width
-          : props.width || _image.width,
-      height:
-        typeof props.height === 'string'
-          ? _image.height
-          : props.height || _image.height,
+      width: typeof props.width === 'string' ? _image.width : props.width || _image.width,
+      height: typeof props.height === 'string' ? _image.height : props.height || _image.height,
     },
   };
 }
 ---
 
-{
-  image && (
-    <img
-      src={image.src}
-      {...image.attributes}
-    />
-  )
-}
+{image && <img src={image.src} {...image.attributes} />}
