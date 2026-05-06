@@ -1,0 +1,120 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+import hydroImg from '~/assets/images/salas.png';
+import hydro1Img from '~/assets/images/hydrosaf1.png';
+import helicopterImg from '~/assets/images/helicopter.png';
+
+const metadata = {
+  title: 'HYDRO-SAF',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- HERO -->
+
+  <Hero
+    tagline="HYDRO-SAF"
+    title="Performance and material compatibility of Sustainable Aviation Fuels"
+    subtitle="HYDRO-SAF investigates the impact of hydrotreated Sustainable Aviation Fuel blends on engine performance, emissions and elastomeric material compatibility under realistic operating conditions."
+    image={{
+      src: hydroImg,
+      alt: 'HYDRO-SAF experimental facilities',
+    }}
+  />
+
+  <!-- FEATURES -->
+
+  <Features2
+    title="Core research areas"
+    subtitle="Main scientific objectives addressed in the HYDRO-SAF subproject."
+    columns={3}
+    items={[
+      {
+        title: 'Fuel characterization',
+        description:
+          'Experimental determination of physical and chemical properties of fossil kerosene (JP8) and SAF blends to support performance and emissions analysis.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Material compatibility',
+        description:
+          'Assessment of degradation, durability and mechanical behaviour of elastomeric materials exposed to SAF under controlled conditions.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Engine performance & emissions',
+        description:
+          'Evaluation of thrust, fuel consumption and pollutant emissions in micro-jet and turbojet engines using SAF blends.',
+        icon: 'tabler:engine',
+      },
+    ]}
+  />
+
+  <!-- CONTENT -->
+
+  <Content
+    isReversed
+    image={{
+      src: helicopterImg,
+      alt: 'HYDRO-SAF laboratory setup',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-4">
+        Experimental methodology from laboratory to real engines
+      </h3>
+      The project combines controlled laboratory experiments with micro-jet engines and 
+      validation at larger scale using turbojet systems. Tests are performed under representative 
+      operating conditions, including landing and take-off cycles, enabling a realistic 
+      assessment of Sustainable Aviation Fuel behaviour.
+    </Fragment>
+  </Content>
+
+  <!-- CONTENT EXTRA -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Fuel blends analysis',
+        description:
+          'Comparison between conventional JP8 fuel and different SAF blends to identify variations in combustion behaviour and emissions.',
+        icon: 'tabler:activity',
+      },
+      {
+        title: 'Elastomer degradation',
+        description:
+          'Immersion and mechanical testing to evaluate material compatibility, including hardness, wear and structural integrity.',
+        icon: 'tabler:layers-difference',
+      },
+      {
+        title: 'Emission characterization',
+        description:
+          'Measurement of CO₂, CO, NOx, hydrocarbons and particle emissions under different engine loads.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Performance validation',
+        description:
+          'Analysis of thrust, fuel consumption and efficiency to ensure safe operation without performance loss.',
+        icon: 'tabler:gauge',
+      },
+    ]}
+    image={{
+      src: hydro1Img,
+      alt: 'HYDRO-SAF analysis',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Scientific scope
+      </h3>
+    </Fragment>
+  </Content>
+
+</Layout>
