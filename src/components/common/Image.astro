@@ -1,15 +1,21 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
 import { findImage } from '~/utils/images';
+import type { ImageMetadata } from 'astro';
 
 type Props = {
-  src: any;
-  alt: string;
+  src?: string | ImageMetadata;
+  alt?: string;
   class?: string;
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   loading?: 'lazy' | 'eager';
   decoding?: 'async' | 'sync' | 'auto';
+
+  widths?: number[];
+  sizes?: string;
+  layout?: string;
+  aspectRatio?: string;
 };
 
 type ImageType = {
@@ -17,10 +23,10 @@ type ImageType = {
   attributes: HTMLAttributes<'img'>;
 };
 
-const props = Astro.props;
+const props: Props = Astro.props;
 
-if (!props.alt) {
-  throw new Error('Image alt is required');
+if (!props.src) {
+  throw new Error('Image src is required');
 }
 
 const _image = await findImage(props.src);
@@ -31,24 +37,36 @@ if (typeof _image === 'string') {
   image = {
     src: _image,
     attributes: {
-      alt: props.alt,
+      alt: props.alt || '',
       class: props.class,
       loading: props.loading || 'lazy',
       decoding: props.decoding || 'async',
-      width: props.width,
-      height: props.height,
+      width:
+        typeof props.width === 'string'
+          ? undefined
+          : props.width,
+      height:
+        typeof props.height === 'string'
+          ? undefined
+          : props.height,
     },
   };
 } else if (_image?.src) {
   image = {
     src: _image.src,
     attributes: {
-      alt: props.alt,
+      alt: props.alt || '',
       class: props.class,
       loading: props.loading || 'lazy',
       decoding: props.decoding || 'async',
-      width: props.width || _image.width,
-      height: props.height || _image.height,
+      width:
+        typeof props.width === 'string'
+          ? _image.width
+          : props.width || _image.width,
+      height:
+        typeof props.height === 'string'
+          ? _image.height
+          : props.height || _image.height,
     },
   };
 }
